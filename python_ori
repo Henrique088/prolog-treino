@@ -1,0 +1,44 @@
+from openpyxl import Workbook, load_workbook
+
+path = r'/home/henrique/Documentos/Backup/Paradigmas/obras.xlsx'
+arquivo = load_workbook(path)
+atual = arquivo.active
+
+# print(atual["E2"].value)
+
+# arquivo.save("obrass.xlsx")
+
+indice = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+# print(indice[0])
+t = 0
+n=0
+f = open('saidas.pl', 'at')
+for campo in atual[indice[t]]:
+    n += 1
+    linha = campo.row
+    # print(indice[t])
+    # letra = indice[t]
+    # print(campo)
+    # print('gasto(''\'{}\''',''\'{}\''',''\'{}\''',''{}'',''{}'',''{}'',''{}'').'.format(atual[f'B{n}'].value, atual['C2'].value, atual['D2'].value, atual['E2'].value, atual['F2'].value, atual['G2'].value, atual['H2'].value, atual['H2'].value))
+
+    if(linha >1):
+        print('gasto(''\'{}\''',''\'{}\''',''\'{}\''',''{}'',''{}'',''{}'',''{}'').\n'.format(atual[f'B{n}'].value, atual[f'C{n}'].value, atual[f'D{n}'].value, atual[f'E{n}'].value, atual[f'F{n}'].value, atual[f'G{n}'].value, atual[f'H{n}'].value, atual[f'H{n}'].value))
+        f.write('gasto(''\'{}\''',''\'{}\''',''\'{}\''',''{}'',''{}'',''{}'',''{}'').\n'.format(atual[f'B{n}'].value, atual[f'C{n}'].value, atual[f'D{n}'].value, atual[f'E{n}'].value, atual[f'F{n}'].value, atual[f'G{n}'].value, atual[f'H{n}'].value, atual[f'H{n}'].value))
+    # if linha == 2:
+    #     print('gasto(''\'{}\''',''\'{}\''',''\'{}\''',''{}'',''{}'',''{}'',''{}'').'.format(atual['B2'].value, atual['C2'].value, atual['D2'].value, atual['E2'].value, atual['F2'].value, atual['G2'].value, atual['H2'].value, atual['H2'].value))
+    #     f.write('gasto(''\'{}\''',''\'{}\''',''\'{}\''',''{}'',''{}'',''{}'',''{}'').\n'.format(atual['B2'].value,atual['C2'].value,atual['D2'].value,atual['E2'].value,atual['F2'].value,atual['G2'].value,atual['H2'].value,atual['H2'].value))
+    # 
+    # if linha ==3:
+    #     print('gasto(''\'{}\''',''\'{}\''',''\'{}\''',''{}'',''{}'',''{}'',''{}'').'.format(atual['B3'].value,atual['C3'].value,atual['D3'].value,atual['E3'].value,atual['F3'].value,atual['G3'].value,atual['H3'].value,atual['H3'].value))
+    #     f.write('gasto(''\'{}\''',''\'{}\''',''\'{}\''',''{}'',''{}'',''{}'',''{}'').\n'.format(atual['B3'].value,atual['C3'].value,atual['D3'].value,atual['E3'].value,atual['F3'].value,atual['G3'].value,atual['H3'].value,atual['H3'].value))
+    # if linha ==4: 
+    #     print('gasto(''\'{}\''',''\'{}\''',''\'{}\''',''{}'',''{}'',''{}'',''{}'').\n'.format(atual['B4'].value,atual['C4'].value,atual['D4'].value,atual['E4'].value,atual['F4'].value,atual['G4'].value,atual['H4'].value,atual['H4'].value))
+    # 
+    # if linha ==5:
+    #     print('gasto(''\'{}\''',''\'{}\''',''\'{}\''',''{}'',''{}'',''{}'',''{}'').\n'.format(atual['B5'].value,atual['C5'].value,atual['D5'].value,atual['E5'].value,atual['F5'].value,atual['G5'].value,atual['H5'].value,atual['H5'].value))
+    # 
+    # if linha ==6:
+    #     print('gasto(''\'{}\''',''\'{}\''',''\'{}\''',''{}'',''{}'',''{}'',''{}'').\n'.format(atual['B6'].value,atual['C6'].value,atual['D6'].value,atual['E6'].value,atual['F2'].value,atual['G6'].value,atual['H6'].value,atual['H6'].value))
+
+f.close()
